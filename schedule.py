@@ -1,6 +1,6 @@
 # Defines the Schedule class, should not be executed directly.
 class Schedule:
-  def __init__():
+  def __init__():	# constructor ran when creating a new object of type schedule
     pass
 
   def add_task(task):
