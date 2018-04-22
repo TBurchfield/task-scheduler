@@ -1,19 +1,19 @@
 # Defines the Schedule class, should not be executed directly.
 class Schedule:
-  def __init__():
+  def __init__(self):
     pass
 
-  def add_task(task):
+  def add_task(self, task):
     pass
 
-  def remove_task(name):
+  def remove_task(self, name):
     pass
 
-  def get_task_names():
+  def get_task_names(self):
     pass
 
-  def save_schedule(filename):
+  def save_schedule(self, filename):
     pass
 
-  def load_schedule(filename):
+  def load_schedule(self, filename):
     pass
