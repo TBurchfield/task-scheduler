@@ -11,3 +11,9 @@ class Schedule:
 
   def get_task_names():
     pass
+
+  def save_schedule(filename):
+    pass
+
+  def load_schedule(filename):
+    pass
