@@ -1,7 +1,7 @@
 # Defines the Task class, should not be executed directly.
 class Task:
-  def __init__():
+  def __init__(self):
     pass
 
-  def dependent_on(task):
+  def dependent_on(self, task):
     pass
