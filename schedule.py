@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# Defines the Schedule class, should not be executed directly.
 class Schedule:
   def __init__():
     pass

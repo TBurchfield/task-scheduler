@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# Defines the Task class, should not be executed directly.
 class Task:
   def __init__():
     pass
