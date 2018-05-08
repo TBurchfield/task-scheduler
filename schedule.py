@@ -1,4 +1,6 @@
 # Defines the Schedule class, should not be executed directly.
+import pickle
+
 class Schedule:
   def __init__(self):
     self.tasks = []
@@ -25,10 +27,24 @@ class Schedule:
       i += 1
 
   def save_schedule(self, filename):
-    pass
+		# open a file, where you want to store the data
+		file = open(filename,'wb')
+	
+		# dump info to that file
+		pickle.dump(self.task, file)
+
+		# close file
+		file.close()
 
   def load_schedule(self, filename):
-    pass
+		# open file, where we stored the pickled data
+		file = open(filename, 'rb')
+
+		# dump info to that file
+		data = pickle.load(file)
+
+		# close the file
+		file.close()
 
 def order_component(done, task):
   def order_component_r(task):
