@@ -21,17 +21,19 @@ class Schedule:
     i = 0
     while i < len(self.tasks):
       if self.tasks[i].id in done:
+        i += 1
         continue
       sorted_component = order_component(done, self.tasks[i])
       fully_sorted_tasks.extend(sorted_component)
       i += 1
+    return fully_sorted_tasks
 
   def save_schedule(self, filename):
 		# open a file, where you want to store the data
 		file = open(filename,'wb')
 	
 		# dump info to that file
-		pickle.dump(self.task, file)
+		pickle.dump(self, file)
 
 		# close file
 		file.close()
@@ -41,7 +43,7 @@ class Schedule:
 		file = open(filename, 'rb')
 
 		# dump info to that file
-		data = pickle.load(file)
+		self = pickle.load(file)
 
 		# close the file
 		file.close()
