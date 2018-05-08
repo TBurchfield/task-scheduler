@@ -31,7 +31,7 @@ class Schedule:
   def save_schedule(self, filename):
     # open a file, where you want to store the data
     file = open(filename,'wb')
-  
+
     # dump info to that file
     pickle.dump(self, file)
 
@@ -66,4 +66,4 @@ def order_component(done, task):
   # Seen is used to detect cycles
   seen = set()
   order_component_r(task)
-  return sorted_component[::-1]
+  return sorted_component
