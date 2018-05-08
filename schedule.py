@@ -29,24 +29,24 @@ class Schedule:
     return fully_sorted_tasks
 
   def save_schedule(self, filename):
-		# open a file, where you want to store the data
-		file = open(filename,'wb')
-	
-		# dump info to that file
-		pickle.dump(self, file)
+    # open a file, where you want to store the data
+    file = open(filename,'wb')
+  
+    # dump info to that file
+    pickle.dump(self, file)
 
-		# close file
-		file.close()
+    # close file
+    file.close()
 
   def load_schedule(self, filename):
-		# open file, where we stored the pickled data
-		file = open(filename, 'rb')
+    # open file, where we stored the pickled data
+    file = open(filename, 'rb')
 
-		# dump info to that file
-		self = pickle.load(file)
+    # dump info to that file
+    self = pickle.load(file)
 
-		# close the file
-		file.close()
+    # close the file
+    file.close()
 
 def order_component(done, task):
   def order_component_r(task):
