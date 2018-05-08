@@ -7,9 +7,10 @@ import task
 
 # Function
 def usage(exit_code=0):
-	print(''' Usage: scheduler.py add_task(taskname, due_date)
-	scheduler.py remove_task(taskname, due_date)
-	scheudler.py get_task_list
+	print(''' Usage: scheduler.py add_task taskname, due_date
+	scheduler.py remove_tasktaskname
+	scheduler.py get_task_list
+	scheduler.py add_dependency(d1, d2)
 	
 	Note: taskname must be unique
 	''')
