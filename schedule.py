@@ -1,13 +1,14 @@
 # Defines the Schedule class, should not be executed directly.
 class Schedule:
   def __init__(self):
-    pass
+    self.tasks = []
 
   def add_task(self, task):
-    pass
+    self.tasks.append(task)
 
   def remove_task(self, name):
-    pass
+    ids = [ t.id for t in self.tasks ]
+    del self.tasks[ids.index(name)]
 
   # Returns the optimal ordering of tasks
   def get_task_list(self):
