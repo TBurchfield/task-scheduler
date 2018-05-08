@@ -6,8 +6,5 @@ class Task:
   def dependent_on(self, task):
     pass
 
-	def get_due_date(self, task):
-		due_dates = []
-		for dates in due_dates:
-			due_dates.append(task)
-		pass
+ def get_due_date(self, task):
+   return self.due_date
