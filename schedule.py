@@ -18,7 +18,7 @@ class Schedule:
     self.tasks.sort(key=lambda task: task.get_due_date())
     i = 0
     while i < len(self.tasks):
-      if self.tasks[i] in done:
+      if self.tasks[i].id in done:
         continue
       sorted_component = order_component(done, self.tasks[i])
       fully_sorted_tasks.extend(sorted_component)
@@ -32,13 +32,13 @@ class Schedule:
 
 def order_component(done, task):
   def order_component_r(task):
-    if task in done:
+    if task.id in done:
       return
-    seen.add(task)
-    done.add(task)
+    seen.add(task.id)
+    done.add(task.id)
     # Assumes get_dependencies() returns a list sorted by due date
     for child in task.get_dependencies():
-      if child not in seen:
+      if child.id not in seen:
         order_component_r(child)
       else:
         raise AssertionError('This schedule has circular dependencies!')
