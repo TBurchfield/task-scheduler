@@ -4,9 +4,10 @@ import task
 import schedule
 from datetime import datetime
 
-s = schedule.Schedule()
+import time
 
-def generateTasks (height):
+
+def generateTasksCrazy (height):
     layers = []
     for i in range (height):
         layer = []
@@ -18,7 +19,19 @@ def generateTasks (height):
             s.add_task(layer[-1])
         layers.append(layer)
 
-generateTasks(3)
+def generateTasksLinear(number):
+    taskList = []
+    for i in range(number):
+        taskList.append(task.Task("Task {}".format(i), datetime.strptime('Jun 1 2005 1:33PM', '%b %d %Y %I:%M%p')))
+        if (len(taskList) > 1):
+            taskList[-1].add_dependency(taskList[-2])
+        s.add_task(taskList[-1])
+        
 
-for task in s.get_task_list():
-    print(task.id)
+for i in range(10000):
+    s = schedule.Schedule()
+    lastTime = time.time()
+    generateTasksLinear(i)
+    #print ("Layers: {}, Time: {}".format(i, time.time() - lastTime))
+    print ("{},{}".format(i, time.time() - lastTime))
+
