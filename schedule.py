@@ -52,14 +52,13 @@ def order_component(done, task):
   def order_component_r(task):
     if task.id in done:
       return
+    if task.id in seen:
+      raise AssertionError('This schedule has circular dependencies!')
     seen.add(task.id)
     done.add(task.id)
     # Assumes get_dependencies() returns a list sorted by due date
     for child in task.get_dependencies():
-      if child.id not in seen:
-        order_component_r(child)
-      else:
-        raise AssertionError('This schedule has circular dependencies!')
+      order_component_r(child)
     # We can be guaranteed tasks' time is after due_date, otherwise it would have been in done
     sorted_component.append(task)
   sorted_component = []
