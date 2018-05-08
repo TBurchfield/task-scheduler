@@ -9,3 +9,7 @@ class Task:
 
   def get_due_date(self, task):
    return self.due_date
+
+  def add_dependency(self, task):
+    self.dependencies.append(task)
+    self.dependencies.sort(key=lambda task: task.get_due_date())
