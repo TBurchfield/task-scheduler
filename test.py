@@ -2,9 +2,9 @@
 import task
 import schedule
 from datetime import datetime
-t = task.Task("Paint house",  datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p'))
-v = task.Task("Buy paint",  datetime.strptime('Jun 1 2006  1:33PM', '%b %d %Y %I:%M%p'))
-g = task.Task("Get money",  datetime.strptime('Jun 1 2006  1:33PM', '%b %d %Y %I:%M%p'))
+t = task.Task("Data Structures Test",  datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p'))
+v = task.Task("Study Data Structures",  datetime.strptime('Jun 1 2006  1:33PM', '%b %d %Y %I:%M%p'))
+g = task.Task("Buy Data Structures Book",  datetime.strptime('Jun 1 2006  1:33PM', '%b %d %Y %I:%M%p'))
 t.add_dependency(v)
 v.add_dependency(g)
 s = schedule.Schedule()
